@@ -3,34 +3,34 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
-  <meta name="theme-color" content="#070a10" />
-  <meta name="color-scheme" content="dark" />
+  <meta name="theme-color" content="#f7f8fc" />
+  <meta name="color-scheme" content="light" />
   <title>Ink World</title>
 
   <style>
     :root{
-      /* Customization tokens */
-      --bg0:#060812;
-      --bg1:#070a10;
-      --bg2:#0b1222;
+      /* Bright theme */
+      --bg0:#ffffff;
+      --bg1:#f7f8fc;
+      --bg2:#eef2ff;
 
-      --text: rgba(255,255,255,.92);
-      --muted: rgba(255,255,255,.70);
+      --text: rgba(0,0,0,.90);
+      --muted: rgba(0,0,0,.62);
 
-      --card-bg: rgba(12,16,26,.58);
-      --card-bg-2: rgba(12,16,26,.46);
-      --stroke: rgba(255,255,255,.14);
-      --stroke-2: rgba(255,255,255,.24);
+      --card-bg: rgba(255,255,255,.72);
+      --card-bg-2: rgba(255,255,255,.56);
+      --stroke: rgba(0,0,0,.10);
+      --stroke-2: rgba(0,0,0,.16);
 
-      --a1: rgba(120,170,255,.35);
-      --a2: rgba(255,140,210,.28);
-      --a3: rgba(120,255,220,.22);
+      --a1: rgba(80,140,255,.22);
+      --a2: rgba(255,120,190,.18);
+      --a3: rgba(70,220,190,.16);
 
       --max: 560px;
       --radius: 26px;
       --btn-radius: 20px;
 
-      --tap-min: 56px;        /* required */
+      --tap-min: 56px;
       --gap: 14px;
       --pad: 18px;
 
@@ -67,13 +67,13 @@
       position:absolute;
       inset:-30%;
       background:
-        radial-gradient(closest-side at 30% 35%, rgba(160,200,255,.16), transparent 62%),
-        radial-gradient(closest-side at 70% 30%, rgba(255,170,230,.12), transparent 64%),
-        radial-gradient(closest-side at 55% 80%, rgba(160,255,235,.10), transparent 66%);
+        radial-gradient(closest-side at 30% 35%, rgba(60,120,255,.14), transparent 62%),
+        radial-gradient(closest-side at 70% 30%, rgba(255,90,175,.11), transparent 64%),
+        radial-gradient(closest-side at 55% 80%, rgba(40,210,180,.10), transparent 66%);
       transform: translate3d(0,0,0);
       opacity:.9;
-      mix-blend-mode: screen;
-      filter: saturate(120%);
+      mix-blend-mode: multiply;
+      filter: saturate(110%);
     }
 
     .bg::before{ animation: driftA 14s var(--ease) infinite; }
@@ -95,7 +95,7 @@
       inset:0;
       width:100%;
       height:100%;
-      opacity:.55;
+      opacity:.45;
     }
 
     /* Layout */
@@ -113,14 +113,14 @@
       border-radius:var(--radius);
       border:1px solid var(--stroke);
       background: linear-gradient(180deg, var(--card-bg), var(--card-bg-2));
-      box-shadow: 0 28px 90px rgba(0,0,0,.58);
+      box-shadow: 0 22px 70px rgba(0,0,0,.14);
       overflow:hidden;
     }
 
     @supports (backdrop-filter: blur(10px)){
       .card{
-        backdrop-filter: blur(12px) saturate(125%);
-        -webkit-backdrop-filter: blur(12px) saturate(125%);
+        backdrop-filter: blur(12px) saturate(120%);
+        -webkit-backdrop-filter: blur(12px) saturate(120%);
       }
     }
 
@@ -133,9 +133,9 @@
       width:88px;
       height:88px;
       border-radius:22px;
-      border:1px solid rgba(255,255,255,.16);
-      background: rgba(255,255,255,.06);
-      box-shadow: 0 14px 34px rgba(0,0,0,.38);
+      border:1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.70);
+      box-shadow: 0 12px 28px rgba(0,0,0,.10);
       overflow:hidden;
       margin:0 auto 12px;
       display:grid;
@@ -153,6 +153,7 @@
       font-size:22px;
       letter-spacing:.2px;
       line-height:1.15;
+      color: var(--text);
     }
     .subtitle{
       margin:0;
@@ -171,8 +172,8 @@
       min-height: var(--tap-min);
       padding: 14px 14px;
       border-radius: var(--btn-radius);
-      border: 1px solid rgba(255,255,255,.14);
-      background: linear-gradient(180deg, rgba(255,255,255,.10), rgba(255,255,255,.06));
+      border: 1px solid rgba(0,0,0,.10);
+      background: linear-gradient(180deg, rgba(255,255,255,.88), rgba(255,255,255,.70));
       color: var(--text);
       text-decoration:none;
 
@@ -181,7 +182,7 @@
       justify-content:space-between;
       gap: 12px;
 
-      box-shadow: 0 14px 34px rgba(0,0,0,.26);
+      box-shadow: 0 12px 26px rgba(0,0,0,.10);
       transform: translate3d(0,0,0);
       transition:
         transform .12s var(--ease),
@@ -197,7 +198,7 @@
       content:"";
       position:absolute;
       inset:0;
-      background: rgba(255,255,255,.14);
+      background: rgba(0,0,0,.06);
       opacity:0;
       transition: opacity .12s var(--ease);
       pointer-events:none;
@@ -205,20 +206,20 @@
 
     a.btn:hover{
       transform: translateY(-2px);
-      border-color: rgba(255,255,255,.24);
-      box-shadow: 0 20px 46px rgba(0,0,0,.34);
-      background: linear-gradient(180deg, rgba(255,255,255,.14), rgba(255,255,255,.07));
+      border-color: rgba(0,0,0,.14);
+      box-shadow: 0 18px 36px rgba(0,0,0,.14);
+      background: linear-gradient(180deg, rgba(255,255,255,.96), rgba(255,255,255,.76));
     }
-    a.btn:hover::after{ opacity:.06; }
+    a.btn:hover::after{ opacity:.05; }
 
     a.btn:active{
       transform: translateY(0) scale(.99);
-      box-shadow: 0 12px 30px rgba(0,0,0,.30);
+      box-shadow: 0 10px 22px rgba(0,0,0,.12);
     }
     a.btn:active::after{ opacity:.10; }
 
     a.btn:focus-visible{
-      outline: 3px solid rgba(160,200,255,.45);
+      outline: 3px solid rgba(60,120,255,.35);
       outline-offset: 3px;
     }
 
@@ -233,11 +234,12 @@
       width:48px;
       height:48px;
       border-radius:16px;
-      border:1px solid rgba(255,255,255,.12);
-      background: rgba(255,255,255,.06);
+      border:1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.75);
       display:grid;
       place-items:center;
       flex:0 0 auto;
+      color: rgba(0,0,0,.78);
     }
     .icon svg{
       width:22px;
@@ -259,6 +261,7 @@
       white-space:nowrap;
       overflow:hidden;
       text-overflow:ellipsis;
+      color: rgba(0,0,0,.88);
     }
     .labels span{
       font-size:12px;
@@ -271,8 +274,9 @@
     .chev{
       width:18px;
       height:18px;
-      opacity:.78;
+      opacity:.72;
       flex:0 0 auto;
+      color: rgba(0,0,0,.70);
     }
     .chev path{
       stroke: currentColor;
@@ -293,10 +297,10 @@
       padding: 10px 12px;
       border-radius: 16px;
 
-      border:1px solid rgba(255,255,255,.14);
-      background: rgba(12,16,26,.78);
-      color: rgba(255,255,255,.92);
-      box-shadow: 0 18px 44px rgba(0,0,0,.50);
+      border:1px solid rgba(0,0,0,.10);
+      background: rgba(255,255,255,.82);
+      color: rgba(0,0,0,.85);
+      box-shadow: 0 16px 34px rgba(0,0,0,.16);
 
       font-size:13px;
       white-space:nowrap;
@@ -308,8 +312,8 @@
 
     @supports (backdrop-filter: blur(10px)){
       .toast{
-        backdrop-filter: blur(10px) saturate(130%);
-        -webkit-backdrop-filter: blur(10px) saturate(130%);
+        backdrop-filter: blur(10px) saturate(120%);
+        -webkit-backdrop-filter: blur(10px) saturate(120%);
       }
     }
 
@@ -496,7 +500,7 @@
         r: rand(1.0, 2.2),
         vx: rand(-0.18, 0.18),
         vy: rand(-0.14, 0.14),
-        a: rand(0.10, 0.26)
+        a: rand(0.10, 0.22)
       }));
 
       let px = w * 0.5, py = h * 0.35;
@@ -530,7 +534,7 @@
 
           ctx.beginPath();
           ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-          ctx.fillStyle = `rgba(255,255,255,${p.a})`;
+          ctx.fillStyle = `rgba(0,0,0,${p.a})`;
           ctx.fill();
         }
       }
